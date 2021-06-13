@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  *  @Author Starbug
  *  @Date 2021/5/23 15:42
+ *  两阶段终止模式
  *  isInterrupted: 查看线程是否被打断(不清除打端标记)
  *  interrupted: 查看线程是否被打断(清除打断标记)
  */
