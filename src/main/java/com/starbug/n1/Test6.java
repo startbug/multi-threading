@@ -48,10 +48,10 @@ class TwoPhaseTermination {
                     e.printStackTrace();
                     //因为线程在sleep、wait和join期间被打断,其打断表示会被置为false
                     // 所以在异常捕获后通过interrupt方法重新设一遍打断标识,下一次循环就可以进入处理阶段
-//                    currentThread.interrupt();
-//                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
-//                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
-//                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
+                    currentThread.interrupt();
+                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
+                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
+                    log.debug("打断标记是否被重置(isInterrupted):{}", currentThread.isInterrupted());
 //                    log.debug("打断标记是否被重置(interrupted):{}", Thread.interrupted());
 //                    log.debug("打断标记是否被重置(interrupted):{}", Thread.interrupted());
 //                    log.debug("打断标记是否被重置(interrupted):{}", Thread.interrupted());
