@@ -34,15 +34,17 @@ class AccountCAS implements Account {
 
     @Override
     public void withdraw(Integer amount) {
-        while (true) {
-            //获取原有的余额值
-            int prev = this.balance.get();
-            //计算扣减后的余额值
-            int next = prev - amount;
-            if (this.balance.compareAndSet(prev, next)) {
-                break;
-            }
-        }
+//        while (true) {
+//            //获取原有的余额值
+//            int prev = this.balance.get();
+//            //计算扣减后的余额值
+//            int next = prev - amount;
+//            if (this.balance.compareAndSet(prev, next)) {
+//                break;
+//            }
+//        }
+        //优化: 使用addAndGet,设置负数表示扣减存款
+        this.balance.addAndGet(-amount);
     }
 }
 
