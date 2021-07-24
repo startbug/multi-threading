@@ -1,6 +1,5 @@
 package com.starbug.atomic;
 
-import java.time.temporal.ValueRange;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -10,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestAtomicInteger {
 
     public static void main(String[] args) {
-
         AtomicInteger i1 = new AtomicInteger(0);
 
         System.out.println(i1.getAndIncrement());    // i++ 自增后返回自增前的值 0
@@ -30,9 +28,13 @@ public class TestAtomicInteger {
         //返回计算前的值(设置新的值会使用CAS判断,不断自旋,直到成功)
         int preResult = i2.getAndUpdate(value -> value - 5);
         System.out.println(preResult);
-
         System.out.println(i2.get());
 
+        AtomicInteger i = new AtomicInteger(0);
+
+        //pre修改前的值,x为第一个传入的参数10
+        System.out.println(i.getAndAccumulate(10, (pre, x) -> pre + x));
+        System.out.println(i.accumulateAndGet(10, (pre, x) -> pre + x));
     }
 
 }
