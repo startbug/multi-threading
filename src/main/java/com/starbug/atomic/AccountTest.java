@@ -13,9 +13,6 @@ public class AccountTest {
 
     public static void main(String[] args) {
         DecimalAccount.demo(new DecimalAccountCAS(new BigDecimal("10000")));
-        String s = "a" + "b" + "c";
-        String s2 = "a" + "bc";
-        System.out.println(s == s2);
     }
 
 }
