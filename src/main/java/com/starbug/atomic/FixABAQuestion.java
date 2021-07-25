@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicStampedReference;
 /**
  * @Author Starbug
  * @Date 2021/7/24 23:47
- * 修复ABA问题,添加版本号
+ * 修复ABA问题,添加版本号(记录一个int值，记录被修改的次数)
  */
 @Slf4j(topic = "c.FixABAQuestion")
 public class FixABAQuestion {
